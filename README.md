@@ -1,6 +1,8 @@
 # BIMAssetNamingValidator
 Unreal Engine asset naming validator used for our projects.
 
+[<img src="GitHub/Preview.png?raw=true">](GitHub/Preview.png?raw=true)
+
 ## Installation
 
 Drop the repository folder called `BIMAssetNamingValidator` in your projects `Plugins` folder. Once you do so, you can enable the plugin from plugins section of Unreal Engine.
