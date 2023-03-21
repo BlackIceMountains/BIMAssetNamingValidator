@@ -1,0 +1,30 @@
+{
+	"FileVersion" : 3,
+	"Version" : 1,
+	"VersionName" : "1.0",
+	"FriendlyName" : "Black Ice Mountains - Asset Naming Validator",
+	"Description" : "Performs validation of the assets if they adhere to studio's naming convention.",
+	"Category" : "Validator",
+	"CreatedBy" : "Black Ice Mountains",
+	"CreatedByURL" : "http://bimgam.es",
+	"DocsURL" : "",
+	"MarketplaceURL" : "",
+	"SupportURL" : "",
+	"EnabledByDefault" : true,
+	"CanContainContent" : true,
+	"IsBetaVersion" : false,
+	"Installed" : false,
+	"Modules": [
+		{
+			"Name": "BIMAssetNamingValidator",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "DataValidation",
+			"Enabled": true
+		}
+	]
+}
