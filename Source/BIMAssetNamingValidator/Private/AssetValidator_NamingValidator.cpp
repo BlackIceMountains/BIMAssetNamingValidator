@@ -3,17 +3,16 @@
 #include "AssetValidator_NamingValidator.h"
 
 #include "Engine/Blueprint.h"
+
 #define LOCTEXT_NAMESPACE "AssetValidator_NamingValidator"
 
-UAssetValidator_NamingValidator::UAssetValidator_NamingValidator()
-{
-}
 
 void UAssetValidator_NamingValidator::PostInitProperties()
 {
 	Super::PostInitProperties();
 	RecompileRegex();
 }
+
 
 void UAssetValidator_NamingValidator::RecompileRegex()
 {
@@ -34,6 +33,7 @@ void UAssetValidator_NamingValidator::RecompileRegex()
 	BlueprintClassPatternString.Add(DefaultBlueprintPattern);
 
 }
+
 
 bool UAssetValidator_NamingValidator::CanValidateAsset_Implementation(UObject *InAsset) const
 {
@@ -74,12 +74,13 @@ EDataValidationResult UAssetValidator_NamingValidator::ValidateLoadedAsset_Imple
 		if (!Matcher.FindNext())
 		{
 			const FString ClassName = Blueprint->ParentClass ? Blueprint->ParentClass->GetPathName() : "None";
-			AssetWarning(InAsset, FText::Format(LOCTEXT("BlueprintInvalidPrefix", "Blueprint of class {0} must match {1}"), FText::FromString(ClassName), FText::FromString(BlueprintClassPatternString[PatternIndex])));
+			AssetWarning(InAsset, FText::Format(LOCTEXT("BlueprintMustMatchRegex", "Blueprint of class {0} must match {1}"), FText::FromString(ClassName), FText::FromString(BlueprintClassPatternString[PatternIndex])));
 		}
 	}
 
 	AssetPasses(InAsset);
 	return GetValidationResult();
 }
+
 
 #undef LOCTEXT_VALIDATOR

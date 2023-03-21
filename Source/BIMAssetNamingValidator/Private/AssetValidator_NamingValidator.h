@@ -23,7 +23,6 @@ class UAssetValidator_NamingValidator : public UEditorValidatorBase
 	GENERATED_BODY()
 
 public:
-	UAssetValidator_NamingValidator();
 
 	virtual void PostInitProperties() override;
 
